@@ -91,6 +91,9 @@ if ( $ScriptAnalyzerResult ) {
         # post to the PR
         Add-PRComment -Body $body
     }
+
+    throw "PSScriptAnalyzer found issues with your code"
+
 } else {
     Write-Output "All Script Analyzer tests passed"
 

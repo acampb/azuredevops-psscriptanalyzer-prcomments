@@ -1,7 +1,3 @@
-Write-Host "Hello World"
+$Password = "SuperSecurePassword" | ConvertTo-SecureString -AsPlainText -Force
 
 Write-Output "Hello from PR"
-
-$Problem = "this"
-
-Write-Output $Problem
