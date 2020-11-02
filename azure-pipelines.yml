@@ -15,7 +15,6 @@ jobs:
         pwsh: true
         script: |
           Install-Module -Name 'PSScriptAnalyzer' -Scope 'CurrentUser' -Force
-
     - task: PowerShell@2
       displayName: 'Analyze and post PR Comment'
       env:
@@ -24,5 +23,4 @@ jobs:
         targetType: filePath
         pwsh: true
         filePath: $(Build.Repository.LocalPath)/tests/Start-PSScriptAnalyzer.ps1
-        arguments: '-ScriptDirectory ../scripts'
-        workingDirectory: $(Build.Repository.LocalPath)/tests
+        arguments: '-ScriptDirectory $(Build.Repository.LocalPath)/scripts'
