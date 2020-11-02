@@ -13,12 +13,12 @@ param (
 )
 
 function Add-PRComment {
-[CmdletBinding()]
-param (
-    [Parameter(Mandatory = $true)]
-    [string]
-    $Body
-)
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]
+        $Body
+    )
     Write-Verbose "Posting PR Comment via AzureDevOps REST API"
 
     # post the comment to the pull request
@@ -94,7 +94,8 @@ if ( $ScriptAnalyzerResult ) {
 
     throw "PSScriptAnalyzer found issues with your code"
 
-} else {
+}
+else {
     Write-Output "All Script Analyzer tests passed"
 
     $markdownComment = @"
